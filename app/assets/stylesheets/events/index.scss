@@ -1,0 +1,22 @@
+.index {
+  .calendar-title {
+    font-size: large;
+    color: #154ec5;
+    font-weight: bold;
+  }
+
+  .calendar-heading {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .day {
+    cursor: pointer;
+  }
+
+  a {
+    .btn-primary {
+      color: white;
+    }
+  }
+}

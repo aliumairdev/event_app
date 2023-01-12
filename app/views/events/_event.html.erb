@@ -1,0 +1,8 @@
+<tr>
+  <td><%= event.title %></td>
+  <td><%= format_date event.date %></td>
+  <td><%= format_time event.time %></td>
+  <td><%= link_to 'Show', event, class: "btn btn-outline-info btn-sm" %></td>
+  <td><%= link_to 'Edit', edit_event_path(event), class: "btn btn-outline-dark btn-sm" %></td>
+  <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm" %></td>
+</tr>

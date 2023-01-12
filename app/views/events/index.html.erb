@@ -1,0 +1,46 @@
+<div class="index container">
+  <nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <a class="nav-item nav-link active" id="calender-tab" data-toggle="tab" href="#calender" role="tab" aria-controls="calender" aria-selected="true">Calender</a>
+      <a class="nav-item nav-link" id="all-events-tab" data-toggle="tab" href="#all-events" role="tab" aria-controls="all-events" aria-selected="false">All Events</a>
+    </div>
+  </nav>
+  
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="calender" role="tabpanel" aria-labelledby="calender-tab">
+      <div class="row">
+        <div class="col-7 js-calender-section">
+          <h1>Calender</h1>
+
+          <%= month_calendar attribute: :date, events: @events do |date, events| %>
+            <%= content_tag :div, class: "calendar-day js-calendar-day", date: {date: date} do %>
+              <%= link_to date.strftime("%d"), events_path(date: date), remote: true %>
+            <% end %>
+            
+            <br>
+
+            <% events.each do |event| %>
+              <div>
+                <%= link_to event.title, event %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="col-5 js-events-section hide tab-panel">
+          <h1>Events</h1>
+          
+          <div class="js-events-table">
+            <%= render 'events', events: @today_events %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="all-events" role="tabpanel" aria-labelledby="all-events-tab">
+      <div class="hide tab-panel">
+        <div>
+          <%= render 'events', events: @events %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
