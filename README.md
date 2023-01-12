@@ -13,7 +13,7 @@ Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.
 ## Getting Started
 
 ```bash
-git clone https://github.com/m-huzaifa/event_app.git
+git clone https://github.com/aliumairdev/event_app.git
 cd event_app
 ```
 
